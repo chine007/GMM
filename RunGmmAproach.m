@@ -25,7 +25,8 @@ Model.Iters = 1;            % # of iterations of the weighting matrix (tradition
 Model.q = 20;               % # of lags in the weight matrix is estimated by the Barlett kernel proposed by Newey and West (1987),
                             % Model.q = 0 reduces the spectral density matrix to the sample covariance matrix   
                             
-
+fprintf('\n Mean = %+3.5f \n Standard deviation = %+3.5f \n Skewness = %+3.5f  \n kurtosis = % +3.5f \n',...
+                mean(Model.Data), std(Model.Data), skewness(Model.Data,0), kurtosis(Model.Data));
 % ESTIMATION
 Results = GMMestimation(Model);
 
